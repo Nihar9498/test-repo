@@ -2,6 +2,7 @@
 # Update center for jenkins
 # Versions for tomcat
 # Tomcat home
+FROM nginx:1.7.12
 ENV JENKINS_UC=https://updates.jenkins-ci.org \
 	TOMCAT_MAJOR_VERSION=7 \
 	TOMCAT_MINOR_VERSION=7.0.55 \
