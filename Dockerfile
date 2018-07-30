@@ -24,3 +24,4 @@ RUN mv apache-tomcat* tomcat
 RUN cd tomcat && sh bin/startup.sh
 
 
+EXPOSE 8081
