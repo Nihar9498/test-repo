@@ -23,6 +23,4 @@ RUN rm apache-tomcat-*.tar.gz
 RUN mv apache-tomcat* tomcat 
 RUN cd tomcat && sh bin/startup.sh
 
-# Add script for running Tomcat
-#ADD run-tomcat.sh /run.sh
 
