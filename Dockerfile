@@ -20,13 +20,8 @@ RUN pip install pyyaml
 RUN tar zxf apache-tomcat-*.tar.gz 
 RUN rm apache-tomcat-*.tar.gz 
 RUN mv apache-tomcat* tomcat 
-RUN rm -rf /tomcat/webapps/* 
-RUN curl -L http://mirrors.jenkins-ci.org/war-stable/$JENKINS_VERSION/jenkins.war -o /tomcat/webapps/ROOT.war
-RUN mkdir /tomcat/webapps/ROOT && cd /tomcat/webapps/ROOT && jar -xvf '/tomcat/webapps/ROOT.war' && cd / 
-RUN rm -rf /var/lib/apt/lists/* 
-RUN mkdir -p /tomcat/webapps/ROOT/ref/init.groovy.d 
-RUN mkdir -p /var/log/nginx/jenkins/
+RUN cd tomcat && sh bin/startup.sh
 
 # Add script for running Tomcat
-ADD run-tomcat.sh /run.sh
+#ADD run-tomcat.sh /run.sh
 
